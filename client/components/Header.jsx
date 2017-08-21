@@ -6,12 +6,14 @@ import NavMenu from './NavMenu';
 class Header extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark">
-        <div className="container">
-          <Link to="/" className="navbar-brand">REDUX CARDS</Link>
-          <NavMenu authenticated={this.props.authenticated} />
-        </div>
-      </nav>
+      <header>
+        <nav className="navbar navbar-dark bg-dark">
+          <div className="container">
+            <Link to="/" className="navbar-brand">REDUX CARDS</Link>
+            <NavMenu authenticated={this.props.authenticated} />
+          </div>
+        </nav>
+      </header>
     );
   }
 }
