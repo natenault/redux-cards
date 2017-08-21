@@ -1,0 +1,24 @@
+/* ## Collection Game Card
+------------------------------------------------- */
+
+.card-slider {
+  .card-header {
+    h1, h2, h3, h4 {
+      margin-bottom: 0;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.card-question {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .card-slider {
+    .card {
+      margin: 0 auto;
+      max-width: 500px;
+    }
+  }
+}
