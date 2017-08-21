@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import NavMenu from './NavMenu';
 
-const Header = () =>
-  <header>
-    <h2>Header</h2>
-  </header>;
+class Header extends Component {
+  render() {
+    return (
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container">
+          <Link to="/" className="navbar-brand">REDUX CARDS</Link>
+          <NavMenu authenticated={this.props.authenticated} />
+        </div>
+      </nav>
+    );
+  }
+}
 
-export default Header;
+function mapStateToProps({ currentUser }) {
+  const { authenticated } = currentUser;
+  return {
+    authenticated
+  };
+}
+
+export default connect(mapStateToProps)(Header);
