@@ -1,9 +1,17 @@
 import * as types from './types';
 
-export const resetGame = collectionCardsIds => {
+export const resetGame = (cardsIds, collectionId) => {
   return {
     type: types.GAME_TOGGLE_RESET,
-    collectionCardsIds
+    collectionId,
+    cardsIds
+  };
+};
+
+export const shuffleCards = cardsIds => {
+  return {
+    type: types.GAME_SHUFFLE_CARDS,
+    cardsIds
   };
 };
 

@@ -8,7 +8,6 @@ const CollectionGameCard = props => {
     <div className="card border-info text-center">
       <div className="card-header">
         <h2>{visibleSide}</h2>
-        <h3>{id}</h3>
       </div>
       {visibleSide === 'question'
         ? <div className="card-body">
