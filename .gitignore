@@ -1,0 +1,31 @@
+.AppleDouble
+.DS_Store
+.LSOverride
+.nyc_output
+azure.err
+iisnode.yml
+
+# config and env vars
+server/env.js
+
+# Caches
+.eslintcache
+.sass-cache/
+
+# Testing
+coverage/
+
+# Modules and packages
+node_modules/
+bower_components/
+
+# Compiles files
+compiled/
+public/bundle.js
+public/*bundle*
+*.map
+*.bundle.js
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
