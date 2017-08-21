@@ -1,4 +1,6 @@
 'use strict';
+const bcrypt = require('bcryptjs');
+
 module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('User', {
     id: {
@@ -28,6 +30,29 @@ module.exports = function(sequelize, DataTypes) {
       foreignKey: 'userId'
     });
   };
+
+  // Instance Methods
+  User.prototype.comparePassword = function(candidatePassword, callback) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+      if (err) {
+        return callback(err);
+      }
+
+      callback(null, isMatch);
+    });
+  };
+
+  // Hooks
+  User.beforeCreate((user, options) => {
+    return bcrypt
+      .genSalt(10)
+      .then(salt => {
+        return bcrypt.hash(user.password, salt, null);
+      })
+      .then(hashed => {
+        user.password = hashed;
+      });
+  });
 
   return User;
 };
