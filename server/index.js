@@ -3,6 +3,8 @@ const cors = require('cors');
 const express = require('express');
 const models = require('./models');
 const morgan = require('morgan');
+const authRoutes = require('./routes/authRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 const app = express();
 
@@ -23,6 +25,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public', express.static('../public'));
 
 // Routes
+app.use('/api', apiRoutes);
+app.use('/auth', authRoutes);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
