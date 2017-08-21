@@ -1,0 +1,21 @@
+/* ## Footer
+------------------------------------------------- */
+
+footer {
+  background-color: #191919;
+  color: #868686;
+
+  > .container {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  > .container::before, > .container::after {
+    content: "";
+    display: table;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
