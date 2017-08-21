@@ -1,6 +1,6 @@
 import axios from 'axios';
 import decode from 'jwt-decode';
-import * from './types';
+import * as types from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 const authErrorMessage = 'Incorrect email or password';
