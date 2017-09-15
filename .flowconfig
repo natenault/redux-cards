@@ -1,0 +1,11 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/bcryptjs/src/bower.json
+<PROJECT_ROOT>/node_modules/config-chain/test/broken.json
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
